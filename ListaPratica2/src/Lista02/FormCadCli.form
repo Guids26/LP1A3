@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Lista02.FormCadCli">
-  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="11" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="11" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="838" height="400"/>
+      <xy x="20" y="20" width="891" height="515"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <component id="75860" class="javax.swing.JLabel" binding="lblClienteId">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="14" height="18"/>
           </grid>
         </constraints>
@@ -18,30 +18,17 @@
           <text value="ID:"/>
         </properties>
       </component>
-      <component id="7c1e0" class="javax.swing.JTextField" binding="txtClienteId">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="1" height="-1"/>
-            <preferred-size width="80" height="29"/>
-            <maximum-size width="80" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value=""/>
-        </properties>
-      </component>
       <component id="d5180" class="javax.swing.JLabel" binding="lblClienteTelResidencial">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Tel. Residencial:"/>
         </properties>
       </component>
-      <component id="fcc9b" class="javax.swing.JTextField" binding="txtClienteTelResidencial">
+      <component id="fcc9b" class="javax.swing.JFormattedTextField" binding="txtClienteTelResidencial">
         <constraints>
-          <grid row="4" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -50,29 +37,9 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="d2df7" class="javax.swing.JLabel" binding="lblClienteNome">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="36" height="18"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Nome:"/>
-        </properties>
-      </component>
-      <component id="821a9" class="javax.swing.JTextField" binding="txtClienteNome">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="7" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="29"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-        </properties>
-      </component>
       <component id="d205d" class="javax.swing.JLabel" binding="lblClienteEmail">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="9" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="1" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <labelFor value="6cfc"/>
@@ -81,110 +48,18 @@
       </component>
       <component id="6cfc" class="javax.swing.JTextField" binding="txtClienteEmail">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="9" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="6" column="1" row-span="1" col-span="6" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
           <enabled value="false"/>
-        </properties>
-      </component>
-      <component id="6cbe2" class="javax.swing.JButton" binding="btnInserir">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Inserir"/>
-        </properties>
-      </component>
-      <component id="a48c2" class="javax.swing.JButton" binding="btnRemover">
-        <constraints>
-          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value="Remover"/>
-        </properties>
-      </component>
-      <component id="98b5a" class="javax.swing.JButton" binding="btnAlterar">
-        <constraints>
-          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value="Alterar"/>
-        </properties>
-      </component>
-      <component id="89d99" class="javax.swing.JButton" binding="btnConfirmar">
-        <constraints>
-          <grid row="7" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value="Confirmar"/>
-        </properties>
-      </component>
-      <component id="2b94d" class="javax.swing.JButton" binding="btnCancelar">
-        <constraints>
-          <grid row="7" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value="Cancelar"/>
-        </properties>
-      </component>
-      <component id="6b83c" class="javax.swing.JButton" binding="btnSair">
-        <constraints>
-          <grid row="7" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Sair"/>
-        </properties>
-      </component>
-      <hspacer id="90044">
-        <constraints>
-          <grid row="7" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
-      <component id="43b2" class="javax.swing.JLabel" binding="lblClientetelCelular">
-        <constraints>
-          <grid row="3" column="8" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Tel. Celular:"/>
-        </properties>
-      </component>
-      <component id="1224d" class="javax.swing.JTextField" binding="txtClienteTelCelular">
-        <constraints>
-          <grid row="4" column="8" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-        </properties>
-      </component>
-      <component id="e5441" class="javax.swing.JLabel" binding="lblClienteTelComercial">
-        <constraints>
-          <grid row="3" column="5" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Tel. Comercial:"/>
-        </properties>
-      </component>
-      <component id="ce41b" class="javax.swing.JTextField" binding="txtClienteTelComercial">
-        <constraints>
-          <grid row="4" column="5" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
+          <text value=""/>
         </properties>
       </component>
       <scrollpane id="a543b" binding="scpClientesCadastrados">
         <constraints>
-          <grid row="9" column="1" row-span="1" col-span="9" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="1" row-span="1" col-span="8" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <enabled value="false"/>
@@ -207,7 +82,7 @@
       </scrollpane>
       <component id="51146" class="javax.swing.JLabel" binding="lblClientesCadastrados">
         <constraints>
-          <grid row="8" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Clientes cadastrados"/>
@@ -218,29 +93,185 @@
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
-      <hspacer id="26d68">
-        <constraints>
-          <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
       <component id="96ae6" class="javax.swing.JSeparator">
         <constraints>
-          <grid row="8" column="3" row-span="1" col-span="7" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="2" row-span="1" col-span="7" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-15366707"/>
         </properties>
       </component>
+      <component id="e5441" class="javax.swing.JLabel" binding="lblClienteTelComercial">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Tel. Comercial:"/>
+        </properties>
+      </component>
+      <component id="ce41b" class="javax.swing.JFormattedTextField" binding="txtClienteTelComercial">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+        </properties>
+      </component>
+      <component id="43b2" class="javax.swing.JLabel" binding="lblClientetelCelular">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Tel. Celular:"/>
+        </properties>
+      </component>
+      <component id="1224d" class="javax.swing.JFormattedTextField" binding="txtClienteTelCelular">
+        <constraints>
+          <grid row="4" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+        </properties>
+      </component>
+      <component id="d2df7" class="javax.swing.JLabel" binding="lblClienteNome">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="36" height="18"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Nome:"/>
+        </properties>
+      </component>
+      <component id="821a9" class="javax.swing.JTextField" binding="txtClienteNome">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="29"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+        </properties>
+      </component>
+      <component id="2b94d" class="javax.swing.JButton" binding="btnCancelar">
+        <constraints>
+          <grid row="7" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Cancelar"/>
+        </properties>
+      </component>
+      <component id="89d99" class="javax.swing.JButton" binding="btnConfirmar">
+        <constraints>
+          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Confirmar"/>
+        </properties>
+      </component>
+      <component id="a48c2" class="javax.swing.JButton" binding="btnRemover">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false">
+            <preferred-size width="40" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Remover"/>
+        </properties>
+      </component>
+      <component id="6cbe2" class="javax.swing.JButton" binding="btnInserir">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="60" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Inserir"/>
+        </properties>
+      </component>
+      <component id="98b5a" class="javax.swing.JButton" binding="btnAlterar">
+        <constraints>
+          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false">
+            <preferred-size width="40" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Alterar"/>
+        </properties>
+      </component>
+      <component id="7c1e0" class="javax.swing.JTextField" binding="txtClienteId">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="1" height="-1"/>
+            <preferred-size width="80" height="29"/>
+            <maximum-size width="80" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="6b83c" class="javax.swing.JButton" binding="btnSair">
+        <constraints>
+          <grid row="7" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Sair"/>
+        </properties>
+      </component>
+      <hspacer id="26d68">
+        <constraints>
+          <grid row="2" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
       <vspacer id="62e8c">
         <constraints>
-          <grid row="10" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <vspacer id="6105d">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="11" height="21"/>
+          </grid>
         </constraints>
       </vspacer>
+      <component id="79e0" class="javax.swing.JLabel" binding="lblImagem">
+        <constraints>
+          <grid row="2" column="7" row-span="5" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="120" height="150"/>
+            <preferred-size width="220" height="250"/>
+            <maximum-size width="220" height="250"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-10938359"/>
+          <foreground color="-4509149"/>
+          <icon value="imagens/image-null-batman.jpg"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="5daf3" class="javax.swing.JButton" binding="btnArquivo">
+        <constraints>
+          <grid row="7" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false">
+            <minimum-size width="24" height="18"/>
+            <preferred-size width="24" height="14"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Arquivo"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
