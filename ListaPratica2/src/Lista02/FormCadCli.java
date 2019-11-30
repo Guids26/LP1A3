@@ -42,6 +42,7 @@ public class FormCadCli extends JFrame {
     private JButton btnArquivo;
     private JLabel lblImagem;
     Banco bd = new Banco();
+    Boolean inserindo = true;
 
 
 
@@ -95,29 +96,40 @@ public class FormCadCli extends JFrame {
                 }
                 int proximoId = id + 1 ;
                 txtClienteId.setText(Integer.toString(proximoId));
-                btnConfirmar.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if(validaEmail() && VerificaCampos()) {
-                            btnInserir.setEnabled(true);
-                            btnConfirmar.setEnabled(false);
-                            btnCancelar.setEnabled(false);
-                            btnArquivo.setEnabled(true);
-                            HabilitarComponente(false);
-                            byte[] img = null;
-                            try {
-                                img = Files.readAllBytes(file[0].toPath());
-                            } catch (IOException ex) {
-                                JOptionPane.showMessageDialog(rootPanel, "ERRO AO INSERIR IMAGEM: " + ex.getMessage() );
-                            }
-                            bd.insereDados(Integer.parseInt(txtClienteId.getText()), txtClienteNome.getText(), txtClienteTelResidencial.getText(), txtClienteTelComercial.getText(), txtClienteTelCelular.getText(), txtClienteEmail.getText(), img);
-                            bd.selectAll(model);
-                            ZerarCampos();
-                        }
-                }
-                });
+                inserindo = true;
             }
         });
+
+        btnConfirmar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(validaEmail() && VerificaCampos()) {
+                    btnInserir.setEnabled(true);
+                    btnConfirmar.setEnabled(false);
+                    btnCancelar.setEnabled(false);
+                    btnArquivo.setEnabled(true);
+                    HabilitarComponente(false);
+                    byte[] img = null;
+                    try {
+                        img = Files.readAllBytes(file[0].toPath());
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(rootPanel, "ERRO AO INSERIR IMAGEM: " + ex.getMessage() );
+                    }
+
+                    if(inserindo) {
+                        Boolean insert = bd.insereDados(Integer.parseInt(txtClienteId.getText()), txtClienteNome.getText(), txtClienteTelResidencial.getText(), txtClienteTelComercial.getText(), txtClienteTelCelular.getText(), txtClienteEmail.getText(), img);
+                    }
+                    else {
+                        int id = Integer.parseInt(txtClienteId.getText());
+                        bd.alteraDados(txtClienteNome.getText(), txtClienteTelResidencial.getText(), txtClienteTelComercial.getText(), txtClienteTelCelular.getText(), txtClienteEmail.getText(), img, id);
+                    }
+                    bd.selectAll(model);
+                    ZerarCampos();
+
+                }
+            }
+        });
+
         btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -139,29 +151,7 @@ public class FormCadCli extends JFrame {
                 btnInserir.setEnabled(false);
                 btnAlterar.setEnabled(false);
                 btnRemover.setEnabled(false);
-                btnConfirmar.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        btnInserir.setEnabled(true);
-                        btnConfirmar.setEnabled(false);
-                        btnCancelar.setEnabled(false);
-                        /*PEGA VALORES DOS CAMPOS, CONVERTE O VALOR DO ID PARA INT E ALTERA NO BANCO DE DADOS O REGISTRO DE COM O ID DIGITADO*/
-                        int id = Integer.parseInt(txtClienteId.getText());
-                        if(validaEmail() && VerificaCampos()) {
-                            byte[] img = null;
-                            try {
-                                img = Files.readAllBytes(file[0].toPath());
-                            } catch (IOException ex) {
-                                JOptionPane.showMessageDialog(rootPanel, "ERRO AO INSERIR IMAGEM: " + ex.getMessage());
-                            }
-                            bd.alteraDados(txtClienteNome.getText(), txtClienteTelResidencial.getText(), txtClienteTelComercial.getText(), txtClienteTelCelular.getText(), txtClienteEmail.getText(),img, id);
-                            HabilitarComponente(false);
-                            ZerarCampos();
-                            bd.selectAll(model);
-                        }
-                    }
-                });
-
+                inserindo = false;
             }
         });
         btnRemover.addActionListener(new ActionListener() {
@@ -274,22 +264,24 @@ public class FormCadCli extends JFrame {
 
     public Boolean validaEmail(){
         String email = txtClienteEmail.getText();
-        int i = 0;
-        boolean temarroba = false;
-        boolean emailvalido = false;
+        if(email != "" || email != null) {
+            int i = 0;
+            boolean temarroba = false;
+            boolean emailvalido = false;
 
-        for(i=0;i < email.length(); i++){
-            if(email.charAt(i) == '@'){
-                temarroba = true;
-            }
-            if(temarroba == true){
-                if(email.charAt(i) == '.'){
-                    return true;
+            for (i = 0; i < email.length(); i++) {
+                if (email.charAt(i) == '@') {
+                    temarroba = true;
+                }
+                if (temarroba == true) {
+                    if (email.charAt(i) == '.') {
+                        return true;
+                    }
                 }
             }
+            JOptionPane.showMessageDialog(rootPanel, "Email inválido! Por favor, confira o endereço inserido!");
         }
-        JOptionPane.showMessageDialog(rootPanel, "Email inválido! Por favor, confira o endereço inserido!");
-        return false;
+            return false;
     }
 
     public Boolean VerificaCampos (){

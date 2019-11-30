@@ -47,9 +47,9 @@ public class Banco {
         String tabelaPessoa = "CREATE TABLE IF NOT EXISTS Clientes(\n"+
                 "id integer PRIMARY KEY UNIQUE,\n" +
                 "nome varchar(30) not null,\n" +
-                "telResidencial varchar(14) ,\n" +
-                "telComercial varchar(14) ,\n" +
-                "telCelular varchar(14) ,\n" +
+                "telResidencial varchar(14) not null ,\n" +
+                "telComercial varchar(14) not null ,\n" +
+                "telCelular varchar(14) not null ,\n" +
                 "email varchar(100) not null,\n"
                 + " foto BLOB );";
         try{
@@ -61,7 +61,7 @@ public class Banco {
         desconectar();
     }
 
-    public void insereDados(int id, String nome, String telResidencial, String telComercial, String telCelular, String email, byte[] img){
+    public boolean insereDados(int id, String nome, String telResidencial, String telComercial, String telCelular, String email, byte[] img){
         conectar();
         String insereSQL = "INSERT INTO Clientes(id, nome, telResidencial, telComercial, telCelular, email, foto) VALUES(?,?,?,?,?,?,?)";
         try(Connection conn = this.getConexao();
@@ -75,10 +75,12 @@ public class Banco {
             pstmt.setBytes(7, img);
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
+            return true;
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null,"ERRO AO INSERIR NO BANCO: " + e.getMessage());
         }
         desconectar();
+        return false;
     }
 
    public void alteraDados(String nome, String telResidencial, String telComercial, String telCelular, String email, byte[] img, int id){
